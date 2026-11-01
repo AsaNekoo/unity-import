@@ -1,0 +1,4 @@
+#!/bin/sh
+q="$HOME/.cache/unity-import"; mkdir -p "$q"
+pgrep -x Unity >/dev/null || { notify-send "Unity" "No editor open"; exit 1; }
+realpath "$1" > "$q/$$.tmp" && mv "$q/$$.tmp" "$q/$$.job"
